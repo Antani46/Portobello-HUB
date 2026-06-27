@@ -60,21 +60,20 @@ Auto-generated on startup:
 ## Project Structure
 
 src/main/java/com/university/portobellohub/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ config/          # Security, Cloudinary, seed data
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ controller/      # REST APIs
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ dto/             # Request/Response DTOs
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ entity/          # JPA entities (Item inheritance)
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ repository/      # JpaRepository & custom queries
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ service/         # Business logic
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ security/        # JWT filters & providers
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ exception/       # Global error handling
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ graphql/         # Admin analytics queries
+config/          # Security, Cloudinary, seed data
+controller/      # REST APIs
+dto/             # Request/Response DTOsentity/          # JPA entities (Item inheritance)
+repository/      # JpaRepository & custom queries
+service/         # Business logic
+ security/        # JWT filters & providers
+ exception/       # Global error handling
+ graphql/         # Admin analytics queries
 
 ## Data Model (JOINED Inheritance)
 
 Item (Base)
- Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ ElectronicItem (brand, model, warrantyMonths, batteryHealth)
- Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ ClothingItem (size, material, gender)
+ ElectronicItem (brand, model, warrantyMonths, batteryHealth)
+ ClothingItem (size, material, gender)
 
 Tables: users, roles, user_roles, categories, items, electronic_items, clothing_items, orders, order_items, reviews.
 
