@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: portobello-hub-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: portobello_hub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - portobello_hub_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d portobello_hub"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  portobello_hub_data:

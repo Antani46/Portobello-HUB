@@ -1,0 +1,26 @@
+type Query {
+    adminStats: AdminStats!
+    topSellingItems(limit: Int = 5): [TopSellingItem!]!
+}
+
+type AdminStats {
+    totalUsers: Int!
+    publishedItems: Int!
+    pendingItems: Int!
+    totalOrders: Int!
+    deliveredOrders: Int!
+    totalRevenue: Float!
+    inventoryByType: [InventoryCount!]!
+}
+
+type InventoryCount {
+    type: String!
+    count: Int!
+}
+
+type TopSellingItem {
+    id: ID!
+    name: String!
+    price: Float!
+    salesCount: Int!
+}
